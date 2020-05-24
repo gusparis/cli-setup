@@ -4,7 +4,9 @@
       "path": "."
     }
   ],
-  "settings": {},
+  "settings": {
+    "ruby.rubocop.onSave": false
+  },
   "extensions": {
     "recommendations": [
       "jnbt.vscode-rufo",

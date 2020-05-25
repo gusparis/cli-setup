@@ -5,13 +5,10 @@
     }
   ],
   "settings": {
-    "ruby.rubocop.onSave": false
+    "solargraph.diagnostics": true,
+    "solargraph.formatting": true
   },
   "extensions": {
-    "recommendations": [
-      "jnbt.vscode-rufo",
-      "rebornix.ruby",
-      "misogi.ruby-rubocop"
-    ]
+    "recommendations": ["rebornix.ruby", "castwide.solargraph"]
   }
 }

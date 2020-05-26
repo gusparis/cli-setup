@@ -1,0 +1,26 @@
+{
+  "$schema": "./schemas/setup-file.json",
+  "meta": {
+    "appVersion": "",
+    "fileVersion": 0,
+    "asciiart": false,
+    "description": "",
+    "name": ""
+  },
+  "targets": [
+    {
+      "alias": "archivo",
+      "env": "dev",
+      "path": "a"
+    }
+  ],
+  "rules": [
+    {
+      "id": "proceed",
+      "options": { "algo": "" },
+      "title": "proceed?",
+      "type": "ask",
+      "write": "alias.a"
+    }
+  ]
+}

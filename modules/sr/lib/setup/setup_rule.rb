@@ -2,9 +2,10 @@
 
 # Define when and how to configure certain fields
 class SetupRule
-  attr_reader :id, :type, :options, :title, :write
-  def initialize(id, type, options, title, write)
+  attr_reader :id, :execute, :type, :options, :title, :write
+  def initialize(id, execute, type, options, title, write)
     @id = id
+    @execute = execute
     @type = type
     @options = options
     @title = title
@@ -14,6 +15,7 @@ class SetupRule
   # Create rule from json_object
   def self.from_json_object(json_object)
     new json_object['id'],
+        json_object['execute'],
         json_object['type'],
         json_object['options'],
         json_object['title'],

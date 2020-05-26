@@ -17,6 +17,7 @@
   "rules": [
     {
       "id": "proceed",
+      "execute": "false",
       "options": { "algo": "" },
       "title": "proceed?",
       "type": "ask",

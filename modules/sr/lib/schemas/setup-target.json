@@ -1,0 +1,28 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema",
+  "$id": "setup-target.json",
+  "type": "object",
+  "title": "Target",
+  "description": "Each target represents a file to configure.",
+  "required": ["env", "path", "alias"],
+  "properties": {
+    "env": {
+      "$id": "#/properties/env",
+      "type": "string",
+      "title": "Enviroment",
+      "description": "associated environment"
+    },
+    "path": {
+      "$id": "#/properties/path",
+      "type": "string",
+      "title": "Path",
+      "description": "File path, relative to setup-file or absolute"
+    },
+    "alias": {
+      "$id": "#/properties/alias",
+      "type": "string",
+      "title": "Alias",
+      "description": "File alias"
+    }
+  }
+}

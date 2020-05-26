@@ -1,0 +1,44 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema",
+  "$id": "setup-file.json",
+  "type": "object",
+  "title": "Setup File",
+  "description": "Definition of the installation process",
+  "required": ["meta", "rules", "targets"],
+  "properties": {
+    "meta": {
+      "$id": "#/properties/meta",
+      "type": "object",
+      "title": "Metadata",
+      "description": "Metadata about setup file",
+      "$ref": "setup-meta.json"
+    },
+    "rules": {
+      "$id": "#/properties/rules",
+      "type": "array",
+      "title": "Rules",
+      "description": "Each rule define when and how to configure certain fields",
+      "additionalItems": true,
+      "items": {
+        "anyOf": [
+          {
+            "$ref": "setup-rule.json"
+          }
+        ]
+      }
+    },
+    "targets": {
+      "$id": "#/properties/targets",
+      "type": "array",
+      "title": "Targets",
+      "description": "Each target represents a file to configure.",
+      "items": {
+        "anyOf": [
+          {
+            "$ref": "setup-target.json"
+          }
+        ]
+      }
+    }
+  }
+}

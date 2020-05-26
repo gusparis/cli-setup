@@ -1,0 +1,36 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema",
+  "$id": "setup-meta.json",
+  "type": "object",
+  "title": "Metadata",
+  "description": "Metadata about setup file.",
+  "required": ["fileVersion", "appVersion", "name", "description", "asciiart"],
+  "properties": {
+    "fileVersion": {
+      "$id": "#/properties/fileVersion",
+      "type": "integer",
+      "title": "Setup File Version"
+    },
+    "appVersion": {
+      "$id": "#/properties/appVersion",
+      "type": "string",
+      "title": "Application version"
+    },
+    "name": {
+      "$id": "#/properties/name",
+      "type": "string",
+      "title": "Application name"
+    },
+    "description": {
+      "$id": "#/properties/description",
+      "type": "string",
+      "title": "Application description"
+    },
+    "asciiart": {
+      "$id": "#/properties/asciiart",
+      "type": "boolean",
+      "title": "Ascii Arte",
+      "description": "Enable/Disable ascii art"
+    }
+  }
+}

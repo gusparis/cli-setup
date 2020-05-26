@@ -1,0 +1,43 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema",
+  "$id": "setup-rule.json",
+  "type": "object",
+  "title": "Rule",
+  "description": "Define when and how to configure certain fields",
+  "required": ["id", "type", "title", "options", "write"],
+  "properties": {
+    "id": {
+      "$id": "#/properties/id",
+      "type": "string",
+      "title": "Id",
+      "description": "Unique Rule Identifier"
+    },
+    "type": {
+      "$id": "#/properties/type",
+      "type": "string",
+      "enum": ["ask", "confirm", "multiple", "select"],
+      "title": "Rule Type",
+      "description": "Type of rule"
+    },
+    "title": {
+      "$id": "#/properties/title",
+      "type": "string",
+      "title": "Title",
+      "description": "Title"
+    },
+    "options": {
+      "$id": "#/properties/options",
+      "type": "object",
+      "title": "Options",
+      "description": "Rule's options",
+      "properties": {}
+    },
+    "write": {
+      "$id": "#/properties/write",
+      "type": "string",
+      "title": "Write",
+      "pattern": "^(?![.])(?!.*[-_.]$).+",
+      "description": "Write path"
+    }
+  }
+}

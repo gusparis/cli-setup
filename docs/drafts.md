@@ -1,5 +1,8 @@
 
 
+## Supported targets
+Configuration targets can be files of type `.yml`, `.yaml` and `.json`
+
 ## Runner
 
 ```rb

@@ -3,7 +3,52 @@
 ## Supported targets
 Configuration targets can be files of type `.yml`, `.yaml` and `.json`
 
+
 ## Runner
+**SetupRunner** is the piece that is used to execute rules. It provides to the user a step-by-step process.
+
+### Simple usage
+
+```rb
+setup = SetupFile.from_file! '../setup-file.json'
+runner = SetupRunner.new setup
+runner.run
+```
+
+SetupRunner class exposes an extension api to customize the setup process.
+
+### Hooks
+- `before_rule` invoked when the rule is ready to run. Can be used to modify rule properties.
+- `after_rule` invoked when after rule execution. Can be used to perform advanced validations.
+```rb
+#
+# Advanced rule customization
+# Set rule option based on a http response.
+#
+runner.before_rule do |rule, request_skip|
+  # request_skip can be used to skip current rule
+  if rule.id === 'step-select-version'
+    ruby_versions = open(ruby_stable_versions).read.split("\n")
+    rule.options.select_options = ruby_versions
+  end
+end
+```
+
+```rb
+#
+# Advanced response validation.
+# Checks connection to the server. 
+#
+runner.after_rule do |rule, result, request_redo|
+  if rule.id === 'step-server-ip'
+    ping_success = system("ping -c 1 -t 1 #{result}  > /dev/null")
+    request_redo.call if (ping_success == false) &&
+                         Prompt.new.yes?('Server not responding. Re-enter ip-adress?')
+  end
+end
+```
+
+### Yielded run
 
 ```rb
 # Setup definitions
@@ -31,6 +76,7 @@ configurator.save()
 
 
 ```
+
 
 ### SetupFile
 In-memory representation of _setup file_.

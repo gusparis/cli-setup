@@ -2,7 +2,7 @@
 
 require_relative 'setup_file'
 require 'tty-prompt'
-$development = true
+$verbose = true
 
 begin
   setup_file = SetupFile.from_file! '../setup-file.json'

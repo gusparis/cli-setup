@@ -1,11 +1,11 @@
 {
   "$schema": "./schemas/setup-file.json",
   "meta": {
-    "appVersion": "",
+    "appVersion": "1.0.0",
     "fileVersion": 0,
-    "asciiart": false,
-    "description": "",
-    "name": ""
+    "asciiArt": true,
+    "description": "Welcome to DOOM Setup",
+    "name": "DOOM"
   },
   "targets": [
     {
@@ -16,7 +16,23 @@
   ],
   "rules": [
     {
-      "id": "proceed",
+      "id": "step-ask-location",
+      "execute": "false",
+      "options": { "algo": "" },
+      "title": "proceed?",
+      "type": "ask",
+      "write": "alias.a"
+    },
+    {
+      "id": "step-select-provider",
+      "execute": "false",
+      "options": { "algo": "" },
+      "title": "proceed?",
+      "type": "ask",
+      "write": "alias.a"
+    },
+    {
+      "id": "step-server-ip",
       "execute": "false",
       "options": { "algo": "" },
       "title": "proceed?",

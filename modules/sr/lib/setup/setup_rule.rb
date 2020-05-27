@@ -3,6 +3,7 @@
 # Define when and how to configure certain fields
 class SetupRule
   attr_reader :id, :execute, :type, :options, :title, :write
+  attr_writer :id, :execute, :type, :options, :title, :write
   def initialize(id, execute, type, options, title, write)
     @id = id
     @execute = execute

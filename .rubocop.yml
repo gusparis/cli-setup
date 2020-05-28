@@ -1,3 +1,4 @@
 GlobalVars:
   AllowedVariables:
     - $development
+    - $verbose

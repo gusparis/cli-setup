@@ -38,7 +38,7 @@ class SetupFile
 
   # Create SetupFile object from json file
   def self.from_file!(file_path)
-    puts "loading #{file_path}" if $development
+    puts "loading #{file_path}" if $verbose
 
     # Validations
     unless File.exist?(file_path)
